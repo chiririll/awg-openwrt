@@ -5,14 +5,14 @@ title: "OpenWrt 25.12.0 ramips"
 
 # OpenWrt 25.12.0 / ramips
 
-Index of [(root)](https://slava-shchipunov.github.io/awg-openwrt/) / [25.12.0](https://slava-shchipunov.github.io/awg-openwrt/25.12.0/)
+Index of [(root)](https://chiririll.github.io/awg-openwrt/) / [25.12.0](https://chiririll.github.io/awg-openwrt/25.12.0/)
 
 Choose a subtarget.
 
 ## Subtargets
 
-- [mt7620](https://slava-shchipunov.github.io/awg-openwrt/25.12.0/ramips/mt7620/)
-- [mt7621](https://slava-shchipunov.github.io/awg-openwrt/25.12.0/ramips/mt7621/)
-- [mt76x8](https://slava-shchipunov.github.io/awg-openwrt/25.12.0/ramips/mt76x8/)
-- [rt305x](https://slava-shchipunov.github.io/awg-openwrt/25.12.0/ramips/rt305x/)
-- [rt3883](https://slava-shchipunov.github.io/awg-openwrt/25.12.0/ramips/rt3883/)
+- [mt7620](https://chiririll.github.io/awg-openwrt/25.12.0/ramips/mt7620/)
+- [mt7621](https://chiririll.github.io/awg-openwrt/25.12.0/ramips/mt7621/)
+- [mt76x8](https://chiririll.github.io/awg-openwrt/25.12.0/ramips/mt76x8/)
+- [rt305x](https://chiririll.github.io/awg-openwrt/25.12.0/ramips/rt305x/)
+- [rt3883](https://chiririll.github.io/awg-openwrt/25.12.0/ramips/rt3883/)

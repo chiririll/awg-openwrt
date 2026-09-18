@@ -5,15 +5,15 @@ title: "OpenWrt 25.12.1 bmips"
 
 # OpenWrt 25.12.1 / bmips
 
-Index of [(root)](https://slava-shchipunov.github.io/awg-openwrt/) / [25.12.1](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/)
+Index of [(root)](https://chiririll.github.io/awg-openwrt/) / [25.12.1](https://chiririll.github.io/awg-openwrt/25.12.1/)
 
 Choose a subtarget.
 
 ## Subtargets
 
-- [bcm6318](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/bmips/bcm6318/)
-- [bcm63268](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/bmips/bcm63268/)
-- [bcm6328](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/bmips/bcm6328/)
-- [bcm6358](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/bmips/bcm6358/)
-- [bcm6362](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/bmips/bcm6362/)
-- [bcm6368](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/bmips/bcm6368/)
+- [bcm6318](https://chiririll.github.io/awg-openwrt/25.12.1/bmips/bcm6318/)
+- [bcm63268](https://chiririll.github.io/awg-openwrt/25.12.1/bmips/bcm63268/)
+- [bcm6328](https://chiririll.github.io/awg-openwrt/25.12.1/bmips/bcm6328/)
+- [bcm6358](https://chiririll.github.io/awg-openwrt/25.12.1/bmips/bcm6358/)
+- [bcm6362](https://chiririll.github.io/awg-openwrt/25.12.1/bmips/bcm6362/)
+- [bcm6368](https://chiririll.github.io/awg-openwrt/25.12.1/bmips/bcm6368/)

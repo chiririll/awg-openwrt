@@ -5,12 +5,12 @@ title: "OpenWrt 25.12.1 ipq40xx"
 
 # OpenWrt 25.12.1 / ipq40xx
 
-Index of [(root)](https://slava-shchipunov.github.io/awg-openwrt/) / [25.12.1](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/)
+Index of [(root)](https://chiririll.github.io/awg-openwrt/) / [25.12.1](https://chiririll.github.io/awg-openwrt/25.12.1/)
 
 Choose a subtarget.
 
 ## Subtargets
 
-- [chromium](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/ipq40xx/chromium/)
-- [generic](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/ipq40xx/generic/)
-- [mikrotik](https://slava-shchipunov.github.io/awg-openwrt/25.12.1/ipq40xx/mikrotik/)
+- [chromium](https://chiririll.github.io/awg-openwrt/25.12.1/ipq40xx/chromium/)
+- [generic](https://chiririll.github.io/awg-openwrt/25.12.1/ipq40xx/generic/)
+- [mikrotik](https://chiririll.github.io/awg-openwrt/25.12.1/ipq40xx/mikrotik/)
