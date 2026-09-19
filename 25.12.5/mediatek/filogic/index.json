@@ -4,7 +4,7 @@
   "packages": {
     "amneziawg-tools": "3.1.20260812-r1",
     "kmod-amneziawg": "6.12.94.3.1.20260906-r1",
-    "luci-i18n-amneziawg-ru": "0.260919.44341",
+    "luci-i18n-amneziawg-ru": "0.260919.66278",
     "luci-proto-amneziawg": "2.0.4-r1"
   }
 }
