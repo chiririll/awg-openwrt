@@ -359,7 +359,7 @@ proto_amneziawg_setup() {
 		else
 			value="off"
 		fi
-		echo "DisableCookies=${awg_disable_cookies}" >> "${awg_cfg}"
+		echo "DisableCookies=${value}" >> "${awg_cfg}"
 	fi
 
 	config_foreach proto_amneziawg_setup_peer "amneziawg_${config}"

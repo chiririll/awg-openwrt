@@ -64,10 +64,10 @@ function validateRangeU16(section_id, value) {
 }
 
 function parseConfigFlag(value) {
-	if (value === 'on')
+	if (value === 'on' || value === 1)
 		return true;
 
-	if (value === 'off')
+	if (value === 'off' || value === 0)
 		return false;
 
 	return null;
@@ -325,6 +325,23 @@ return network.registerProtocol('amneziawg', {
 		o.optional = true;
 		o.validate = validateBase64;
 
+		o = s.taboption('amneziawg', form.DummyValue, '_gen_psk', ' ');
+		o.modalonly = true;
+		o.cfgvalue = function (section_id, value) {
+			return E('button', {
+				'class': 'btn',
+				'click': ui.createHandlerFn(this, function (section_id, ev) {
+					var psk = this.section.getUIElement(section_id, 'awg_header_protection_key'),
+						map = this.map;
+
+					return generatePsk().then(function (key) {
+						psk.setValue(key);
+						map.save(null, true);
+					});
+				}, section_id)
+			}, [_('Generate header protection key')]);
+		};
+
 		o = s.taboption('amneziawg', form.Value, 'awg_content_padding_addition', _('Content Padding Addition'), _('Random addition to the transport payload.'));
 		o.optional = true;
 		o.validate = validateRangeU16;
@@ -350,10 +367,8 @@ return network.registerProtocol('amneziawg', {
 		o.validate = validateRangeU16;
 
 		o = s.taboption('amneziawg', form.Flag, 'awg_random_trailers', _('Random Trailers'), _('Adds random trailers to packets.'));
-		o.optional = true;
 
 		o = s.taboption('amneziawg', form.Flag, 'awg_disable_cookies', _('Disable Cookies'), _('Disables sending Cookie Reply.'));
-		o.optional = true;
 
 		// -- peers -----------------------------------------------------------------------
 
@@ -975,8 +990,8 @@ return network.registerProtocol('amneziawg', {
 				rejectAfterTime ? 'RejectAfterTime = ' + rejectAfterTime : '# RejectAfterTime not defined',
 				keepaliveTimeout ? 'KeepaliveTimeout = ' + keepaliveTimeout : '# KeepaliveTimeout not defined',
 				maxHandshakeAttempts ? 'MaxHandshakeAttempts = ' + maxHandshakeAttempts : '# MaxHandshakeAttempts not defined',
-				randomTrailers ? 'RandomTrailers = ' + randomTrailers : '# RandomTrailers not defined',
-				disableCookies ? 'DisableCookies = ' + disableCookies : '# DisableCookies not defined',
+				randomTrailers !== null ? 'RandomTrailers = ' + (randomTrailers === '1' ? "on" : "off") : '# RandomTrailers not defined',
+				disableCookies !== null ? 'DisableCookies = ' + (disableCookies === '1' ? "on" : "off") : '# DisableCookies not defined',
 				'',
 				'[Peer]',
 				'PublicKey = ' + pub,
