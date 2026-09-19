@@ -299,6 +299,19 @@ configure_amneziawg_interface() {
         read -r -p "Enter I5 value (from [Interface]) [optional, leave blank to skip]:"$'\n' AWG_I5
     fi
 
+    # AWG 3.0 новые параметры
+    if [ "$AWG_VERSION" = "2.0" ] || [ "$AWG_VERSION" = "3.0" ]; then
+        read -r -p "Enter HeaderProtectionKey value (from [Interface]) [optional, leave blank to skip]: " AWG_HEADER_PROTECTION_KEY
+        read -r -p "Enter ContentPaddingAddition value (from [Interface]) [optional, leave blank to skip]: " AWG_CONTENT_PADDING_ADDITION
+        read -r -p "Enter RekeyAfterTime value (from [Interface]) [optional, leave blank to skip]: " AWG_REKEY_AFTER_TIME
+        read -r -p "Enter RekeyTimeout value (from [Interface]) [optional, leave blank to skip]: " AWG_REKEY_TIMEOUT
+        read -r -p "Enter RejectAfterTime value (from [Interface]) [optional, leave blank to skip]: " AWG_REJECT_AFTER_TIME
+        read -r -p "Enter KeepaliveTimeout value (from [Interface]) [optional, leave blank to skip]: " AWG_KEEP_ALIVE_TIMEOUT
+        read -r -p "Enter MaxHandshakeAttempts value (from [Interface]) [optional, leave blank to skip]: " AWG_MAX_HANDSHAKE_ATTEMPTS
+        read -r -p "Enable RandomTrailers? [on/off, optional, leave blank to skip]: " AWG_RANDOM_TRAILERS
+        read -r -p "Enable DisableCookies? [on/off, optional, leave blank to skip]: " AWG_DISABLE_COOKIES
+    fi
+
     uci set network.${INTERFACE_NAME}=interface
     uci set network.${INTERFACE_NAME}.proto=$PROTO
     uci set network.${INTERFACE_NAME}.private_key=$AWG_PRIVATE_KEY_INT
@@ -324,6 +337,19 @@ configure_amneziawg_interface() {
         [ -n "$AWG_I3" ] && uci set network.${INTERFACE_NAME}.awg_i3=$AWG_I3
         [ -n "$AWG_I4" ] && uci set network.${INTERFACE_NAME}.awg_i4=$AWG_I4
         [ -n "$AWG_I5" ] && uci set network.${INTERFACE_NAME}.awg_i5=$AWG_I5
+    fi
+
+    # Устанавливаем новые параметры для AWG 3.0 (только если они заданы)
+    if [ "$AWG_VERSION" = "2.0" ] || [ "$AWG_VERSION" = "3.0" ]; then
+        [ -n "$AWG_HEADER_PROTECTION_KEY" ] && uci set network.${INTERFACE_NAME}.awg_header_protection_key="$AWG_HEADER_PROTECTION_KEY"
+        [ -n "$AWG_CONTENT_PADDING_ADDITION" ] && uci set network.${INTERFACE_NAME}.awg_content_padding_addition="$AWG_CONTENT_PADDING_ADDITION"
+        [ -n "$AWG_REKEY_AFTER_TIME" ] && uci set network.${INTERFACE_NAME}.awg_rekey_after_time="$AWG_REKEY_AFTER_TIME"
+        [ -n "$AWG_REKEY_TIMEOUT" ] && uci set network.${INTERFACE_NAME}.awg_rekey_timeout="$AWG_REKEY_TIMEOUT"
+        [ -n "$AWG_REJECT_AFTER_TIME" ] && uci set network.${INTERFACE_NAME}.awg_reject_after_time="$AWG_REJECT_AFTER_TIME"
+        [ -n "$AWG_KEEP_ALIVE_TIMEOUT" ] && uci set network.${INTERFACE_NAME}.awg_keepalive_timeout="$AWG_KEEP_ALIVE_TIMEOUT"
+        [ -n "$AWG_MAX_HANDSHAKE_ATTEMPTS" ] && uci set network.${INTERFACE_NAME}.awg_max_handshake_attempts="$AWG_MAX_HANDSHAKE_ATTEMPTS"
+        [ -n "$AWG_RANDOM_TRAILERS" ] && uci set network.${INTERFACE_NAME}.awg_random_trailers="$AWG_RANDOM_TRAILERS"
+        [ -n "$AWG_DISABLE_COOKIES" ] && uci set network.${INTERFACE_NAME}.awg_disable_cookies="$AWG_DISABLE_COOKIES"
     fi
 
     if ! uci show network | grep -q ${CONFIG_NAME}; then
