@@ -346,7 +346,7 @@ jobs:
 
           bash .github/scripts/generate-feed-pages.sh \
             "$GITHUB_WORKSPACE/gh-pages-content" \
-            "https://slava-shchipunov.github.io/awg-openwrt"
+            "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
 
       - name: Publish to GitHub Pages branch
         # Existing gh-pages content is restored above, then republished as one complete tree.
